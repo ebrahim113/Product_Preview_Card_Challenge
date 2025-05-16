@@ -1,0 +1,139 @@
+:root {
+    --green-500: hsl(158, 36%, 37%);
+    --green-700: hsl(158, 42%, 18%);
+    --black: hsl(212, 21%, 14%);
+    --grey: hsl(228, 12%, 48%);
+    --cream: hsl(30, 38%, 92%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cream);
+}
+
+.product {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 600px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+    .product {
+        flex-direction: column;
+        width: 350px;
+    }
+}
+
+.product>img:nth-child(1) {
+    display: none;
+}
+
+.product>img {
+    max-width: 300px;
+}
+
+@media (max-width: 767px) {
+    .product>img:nth-child(1) {
+        display: block;
+    }
+
+    .product>img:nth-child(2) {
+        display: none;
+    }
+
+    .product>img {
+        max-width: 100%;
+    }
+}
+
+.product .content {
+    padding: 20px 30px;
+}
+
+.product .content .details h3 {
+    color: var(--grey);
+    font-family: "Montserrat";
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+.product .content .details h1 {
+    color: var(--black);
+    font-family: "Fraunces";
+}
+
+.product .content .details p {
+    font-size: 14px;
+    font-family: "Montserrat";
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--grey);
+}
+
+.product .content .price {
+    display: flex;
+    align-items: center;
+}
+
+.product .content .price span:first-child {
+    font-family: "Fraunces";
+    font-weight: 700;
+    color: var(--green-500);
+    font-size: 2em;
+    margin-right: 20px;
+}
+
+.product .content .price span:last-child {
+    font-family: "Montserrat";
+    font-weight: 500;
+    color: var(--grey);
+    text-decoration: line-through;
+}
+
+.product .content .add-to-cart {
+    color: white;
+    background-color: var(--green-500);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0 10px 0;
+    cursor: pointer;
+    transition: background-color .4s;
+}
+
+.product .content .add-to-cart:hover {
+    background-color: var(--green-700);
+}
+
+.product .content .add-to-cart img {
+    margin-right: 10px;
+}
+
+.product .content .add-to-cart span {
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
